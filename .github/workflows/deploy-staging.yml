@@ -9,8 +9,8 @@ env:
   ###############################################
   ### Replace <username> with GitHub username ###
   ###############################################
-  DOCKER_IMAGE_NAME: <username>-azure-ttt
-  AZURE_WEBAPP_NAME: <username>-ttt-app
+  DOCKER_IMAGE_NAME: julian-pulecio-dev-azure-ttt
+  AZURE_WEBAPP_NAME: julian-pulecio-dev-ttt-app
   ###############################################
 
 jobs:
