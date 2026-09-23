@@ -10,9 +10,6 @@ env:
   AZURE_APP_PLAN: actions-ttt-deployment
   AZURE_LOCATION: '"East US"'
   AZURE_PLAN_LOCATION: centralus
-  ###############################################
-  ### Replace <username> with GitHub username ###
-  ###############################################
   AZURE_WEBAPP_NAME: julian-pulecio-dev-ttt-app
 
 jobs:
