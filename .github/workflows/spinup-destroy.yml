@@ -1,0 +1,31 @@
+name: Configure Azure environment
+
+on:
+  pull_request:
+    types: [labeled]
+
+env:
+  IMAGE_REGISTRY_URL: ghcr.io
+  AZURE_RESOURCE_GROUP: cd-with-actions
+  AZURE_APP_PLAN: actions-ttt-deployment
+  AZURE_LOCATION: '"East US"'
+  AZURE_PLAN_LOCATION: centralus
+  ###############################################
+  ### Replace <username> with GitHub username ###
+  ###############################################
+  AZURE_WEBAPP_NAME: julian-pulecio-dev-ttt-app
+
+jobs:
+  setup-up-azure-resources:
+    runs-on: ubuntu-latest
+    if: contains(github.event.pull_request.labels.*.name, 'spin up environment')
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Azure login
+        uses: azure/login@v2
+        with:
+          creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+      - name:
